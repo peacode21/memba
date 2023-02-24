@@ -1,0 +1,61 @@
+{%extends 'user/home_layout.html'%}
+{%block content%}
+  <div class="content" style="background-color: white;padding:3em">
+    
+
+
+    <div class="row g-5">
+    <div class="col-md">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Contact Us
+      </h3>
+      {% set done = get_flashed_messages() %}
+      {% if done %}
+      {% for d in done %}
+      <span class="alert alert-success">{{ d }}</span>
+      {% endfor %}
+      {%endif %}
+
+      <form method="post" action="" novalidate enctype="multipart/form-data">
+{{ contact.csrf_token }}
+{{contact.screenshot}}{{contact.screenshot.errors}}
+<div class="mb-3 row form-group">
+{{contact.email.label(class_='col-md-2')}}
+<div class="mb-1 col-md-5">
+{% if contact.email.errors %}
+{% for error in contact.email.errors %}
+
+<span class_='alert alert-danger'>{{ error }}</span>
+{% endfor %}
+{% endif %}
+{{contact.email(class_='form-control border-info')}}
+</div>
+</div>
+<div class="mb-3 row form-group">
+{{contact.message.label(class_='col-md-2')}}
+<div class="mb-1 col-md-5">
+{% if contact.message.errors %}
+{% for error in contact.message.errors %}
+
+<span class_='alert alert-danger'>{{ error }}</span>
+{% endfor %}
+{% endif %}
+{{contact.message(class_='form-control border-info')}}
+</div>
+</div>
+
+<div class="mb-3 row form-group">
+{{contact.submit.label(class_='col-md-2')}}
+<div class="mb-1 col-md-5">
+{{contact.submit(class_='form-control btn btn-success border-info')}}
+</div>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+
+
+
+{%endblock%}

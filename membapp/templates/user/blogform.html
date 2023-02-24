@@ -1,0 +1,53 @@
+{%extends 'user/home_layout.html'%}
+{%block content%}
+  <div class="content" style="background-color: white;padding:3em">
+    
+
+
+    <div class="row g-5">
+    <div class="col-md-8">
+    {% with m=get_flashed_messages() %}
+        {% if m: %}
+            {% for msg in m %}
+                {{ msg }}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Latest Blog Post
+      </h3>
+      <form method="post">
+        <textarea name="content" class="form-control" placeholder="Tell us about your news"></textarea>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+
+ 
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+       
+
+        <div class="p-4">
+          <a href="/newtopic" class="btn btn-warning">Post New Topic</a>
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Performing Artistes</a></li>
+            <li><a href="#">Partner Hotels</a></li>
+            <li><a href="#">Event Managers</a></li>
+            <li><a href="#">Bids for Contracts</a></li>
+            
+          </ol>
+        </div>
+
+       
+      </div>
+    </div>
+  </div>
+
+
+
+   </div>
+{%endblock%}

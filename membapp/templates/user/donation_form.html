@@ -1,0 +1,50 @@
+{%extends 'user/home_layout.html'%}
+{%block content%}
+  <div class="content" style="background-color: white;padding:3em">
+    
+
+
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Donation Page
+      </h3>
+      <form method="post" action="{{url_for('donate')}}">
+        <label class="col-md-2">Full Name:</label>
+        <div class="col-md-6">
+        <input type="text" name="fullname" value="{% if deets %} {{ deets.user_fullname }} {% endif %}" class="form-control border-success">
+        </div>
+        <label class="col-md-2">Donation Amount:</label>
+        <div class="col-md-6">
+        <input type="text" name="amount" class="form-control border-success">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+
+ 
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+       
+
+        <div class="p-4">
+          <a href="/newtopic" class="btn btn-warning">Post New Topic</a>
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Performing Artistes</a></li>
+            <li><a href="#">Partner Hotels</a></li>
+            <li><a href="#">Event Managers</a></li>
+            <li><a href="#">Bids for Contracts</a></li>
+            
+          </ol>
+        </div>
+
+       
+      </div>
+    </div>
+  </div>
+
+
+
+   </div>
+{%endblock%}

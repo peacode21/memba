@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap/css/bootstrap.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/admin.css')}}">
+    <title>Admin Party</title>
+</head>
+
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <a href="{{url_for('admin_dashboard')}}" class="fs-2 m-0" style="color: #008753;">Dashboard</a>
+                </div>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col m-5">
+                <form class="form-control p-4 mt-3" method="post">
+                    <label>Name</label>
+                    <input type="text" name="partyname" class="form-control my-2">
+                    <label>Short-Code</label>
+                    <input type="text" name="code" class="form-control my-2">
+                    <label>Contact</label>
+                    <input type="text" name="contact" class="form-control my-2">
+                    <button class="btn btn-primary" type="submit">Add</button>
+
+                </form>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+   
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
+</body>
+
+</html>

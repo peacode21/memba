@@ -1,0 +1,25 @@
+{% extends "user/home_layout.html"%}
+  
+{% block content %}
+<div class="content" style="background-color: white;padding:3em">
+ {#{data}#}
+<!--
+ {#{%for d,e in data%}
+ <p>The fullname is {#{d.user_fullname}#}, and the party is {#{e.party_name}#}</p>
+ {#{%endfor%}#}
+
+ {#{%for d in data%}
+ <p>The fullname is {{d[0]}}, and the party is {{d[1]}}</p>
+ {%endfor%}#}
+
+
+{#{data.party_deets.party_name}#}
+|count to know the len -->
+
+ </div>
+ <div>
+    {% if upload %}
+    {{ upload }}
+    {% endif %}
+ </div>
+{% endblock %}

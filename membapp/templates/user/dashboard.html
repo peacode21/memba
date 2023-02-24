@@ -1,0 +1,22 @@
+{% extends "user/home_layout.html"%}
+  
+{% block content %}
+<div class="content" style="background-color: white;padding:3em">
+  <h3>Welcome
+    {%if deets.user_fullname==''%}
+      User{%else%}
+    {{ deets.user_fullname }}
+    {% endif %}
+    !</h3>
+  <p>This is your dashboard, please use the second-level menu to carry out tasks</p>
+  {% with m=get_flashed_messages()%}
+        {% if m:%}
+          {% for msg in m:%}
+            {{msg|safe}}
+          {%endfor%}
+        {% endif %}
+        {% endwith %}
+        {{deets.user_pix}}
+ </div>
+ 
+{% endblock %}
